@@ -5,6 +5,7 @@ from api.xml_api import fetch_xml_data
 from parsers.xml_parser import parse_xml_data
 from parsers.pdf_parser import parse_pdf
 from utils.chatgpt_api import summarize_pdf_with_chatgpt
+from utils.download_pdf import download_pdf
 
 
 def main():
@@ -23,14 +24,6 @@ def main():
     # Print the results
     print("Parsed Data:", parsed_data)
     print("ChatGPT Summary:", chatgpt_summary)
-
-
-def download_pdf(pdf_url):
-    response = requests.get(pdf_url)
-    pdf_path = "downloaded_paper.pdf"
-    with open(pdf_path, "wb") as f:
-        f.write(response.content)
-    return pdf_path
 
 
 if __name__ == "__main__":
