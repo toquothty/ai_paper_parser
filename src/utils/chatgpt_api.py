@@ -1,9 +1,14 @@
 def summarize_pdf_with_chatgpt(pdf_path):
     import requests
+    import json
+
+    with open("../config.json") as f:
+        config = json.load(f)
+        api_key = config["open_ai_key"]
 
     api_url = "https://api.openai.com/v1/files"
     headers = {
-        "Authorization": f"Bearer YOUR_API_KEY",
+        "Authorization": f"{api_key}",
     }
 
     # Upload the PDF file
