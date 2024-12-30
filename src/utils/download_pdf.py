@@ -1,4 +1,4 @@
-from typing import str
+from typing import Any
 
 
 def download_pdf(pdf_url: str, title: str) -> str:
