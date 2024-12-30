@@ -1,4 +1,16 @@
-def parse_pdf(pdf_path):
+from typing import str
+
+
+def parse_pdf(pdf_path: str) -> str:
+    """
+    Parses the content of a PDF file and extracts the text.
+
+    Args:
+        pdf_path (str): The path to the PDF file.
+
+    Returns:
+        str: The extracted text from the PDF file.
+    """
     from PyPDF2 import PdfReader
 
     text = ""
