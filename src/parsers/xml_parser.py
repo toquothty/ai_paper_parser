@@ -1,4 +1,22 @@
-def parse_xml_data(xml_data):
+from typing import List, Dict
+
+
+def parse_xml_data(xml_data: str) -> List[Dict[str, str]]:
+    """
+    Parses the given XML data to extract information about research papers.
+
+    Args:
+        xml_data (str): The XML data as a string.
+
+    Returns:
+        List[Dict[str, str]]: A list of dictionaries containing parsed data for each paper.
+            Each dictionary contains the following keys:
+            - "title": The title of the paper.
+            - "id": The ID of the paper.
+            - "published_date": The published date of the paper.
+            - "summary": The summary of the paper.
+            - "url": The URL to the PDF of the paper.
+    """
     import xml.etree.ElementTree as ET
 
     namespace = {"atom": "http://www.w3.org/2005/Atom"}
